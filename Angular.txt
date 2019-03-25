@@ -1,0 +1,16 @@
+Angular:
+Framework multiplataforma que permite realizar aplicaciones/sitios web utilizando javascript.
+
+Typescript:
+Superset tipado de Javascript que compila directamente a este.
+
+Typescript-----------------------------------------------------------------
+
+let y const tienen ámbitos por bloque (cada {} es un bloque: if, loops...)
+
+Interfaces
+
+interface {
+    mienbro:tipo,
+    miembro?:tipo <-- no obligatorio.
+}
