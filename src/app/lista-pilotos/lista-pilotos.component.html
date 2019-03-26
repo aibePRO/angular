@@ -1,0 +1,17 @@
+  <table *ngIf="pilotos.length > 0 && mostrarPilotos; else esperando">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Avatar</th>
+        <th>Nombre piloto</th>
+        <th>Escuderia</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="mostrarPilotos">
+      <app-piloto *ngFor="let piloto of pilotos; let i = index" [data]="piloto" [indice]="i + 1"></app-piloto>
+    </tbody>
+  </table>
+  <ng-template #esperando>
+    <strong>Esperando datos...</strong>
+  </ng-template>
+  <button (click)="verPilotos()">{{ operacion }} Pilotos</button>

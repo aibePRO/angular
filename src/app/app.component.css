@@ -1,3 +1,12 @@
 p {
     color: green;
 }
+img {
+    margin: 25px auto;
+    height: auto;
+    display: block;
+}
+img.w300 {
+    width: 300px;
+}
+
