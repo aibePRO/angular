@@ -14,8 +14,38 @@ export class PilotosService {
     this.pilotos.push(new Piloto('Fernando', 'Alonso', 'Renault', 'fernando-alonso.jpg'));
   }
 
-  obtenerPilotos() {
+/*   obtenerPilotos() {
     return this.pilotos;
+  }
+ */
+  // Simulando origen de datos
+/*   obtenerPilotosAsync(callback) {
+    setTimeout(() => {
+      callback([...this.pilotos]); //spread notation
+    }, 100);
+  }
+ */
+
+  //CRUD
+  //Lectura
+  obtenerPilotos():Promise<Piloto[]> {
+    let promesa = new Promise<Piloto[]>((resolve, reject) => {
+      try {
+        resolve([...this.pilotos])
+      } catch(error) {
+        reject(error);
+      }
+    });
+    return promesa;
+  }
+  //Borrado
+  borrarPiloto = (id:number) => {
+    this.pilotos.splice(id, 1);
+  }
+  //Alta
+  addPiloto(nuevoPiloto:Piloto) {
+    this.pilotos = [...this.pilotos, nuevoPiloto];
+    // this.pilotos.push(nuevoPiloto); // Forma clásica, no inmutable.
   }
 
 }

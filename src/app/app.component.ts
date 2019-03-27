@@ -1,4 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { ListaPilotosComponent } from './lista-pilotos/lista-pilotos.component';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,12 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 
 export class AppComponent implements OnInit, OnDestroy {
   private _title = 'Bienvenido a esta App';
-  private _subtitle = 'Segunda sesión Angular';
-  private _logoFormula = 'http://aibe.pro/img/aitor_i_bertorelli_e.png';
+  private _subtitle = 'Tercera sesión Angular';
+  private _logoFormula = 'https://www.autofacil.es/elementosWeb/gestionCajas/AUF/Image/ferrari_car.png';
   
+  @ViewChild(ListaPilotosComponent)
+  lista;
+
   get title():string {
     return this._title;
   }
@@ -29,6 +33,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     console.log('Este componente se ha destruído...');
+  }
+
+  nuevoItem() {
+    this.lista.ngOnInit();
   }
 
 }

@@ -1,9 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div>
   <h1>
     {{ title }}!
   </h1>
   <h3>{{ subtitle }}</h3>
   <img class="w300" alt="Angular Logo" [src]="logoFormula">
   <app-lista-pilotos></app-lista-pilotos>
+  <app-alta-piloto (addedPiloto)="nuevoItem()"></app-alta-piloto>
 </div>

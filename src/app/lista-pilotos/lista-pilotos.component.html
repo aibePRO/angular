@@ -1,17 +1,18 @@
-  <table *ngIf="pilotos.length > 0 && mostrarPilotos; else esperando">
-    <thead>
+  <table class="table table-hover" *ngIf="pilotos && pilotos.length > 0; else esperando">
+    <thead class="thead-dark">
       <tr>
-        <th>#</th>
+        <th>ID</th>
         <th>Avatar</th>
         <th>Nombre piloto</th>
         <th>Escuderia</th>
+        <th>Operaciones</th>
       </tr>
     </thead>
     <tbody *ngIf="mostrarPilotos">
-      <app-piloto *ngFor="let piloto of pilotos; let i = index" [data]="piloto" [indice]="i + 1"></app-piloto>
+      <tr app-piloto *ngFor="let piloto of pilotos; let i = index" [data]="piloto" [indice]="i + 1" (itemBorrado)="borrarItem($event)"></tr>
     </tbody>
   </table>
   <ng-template #esperando>
     <strong>Esperando datos...</strong>
   </ng-template>
-  <button (click)="verPilotos()">{{ operacion }} Pilotos</button>
+  <button class="btn btn-primary" (click)="verPilotos()">{{ operacion }} Pilotos</button>

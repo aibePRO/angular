@@ -1,6 +1,6 @@
-<tr>
+
     <td>{{ indice }}</td>
-    <td><img class="w100" [alt]="data.nombreCompleto" [src]="getAvatar(data.portrait)"></td>
+    <td><img class="w100" [alt]="data.nombreCompleto" [src]="getAvatar(data.avatar)"></td>
     <td>{{ data.nombreCompleto }}</td>
     <td>{{ data.escuderia }}</td>
-</tr>
+    <td><button class="btn btn-danger" (click)="borrarItem(indice)">Borrar</button></td>
