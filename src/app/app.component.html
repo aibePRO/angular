@@ -5,6 +5,12 @@
   </h1>
   <h3>{{ subtitle }}</h3>
   <img class="w300" alt="Angular Logo" [src]="logoFormula">
-  <app-lista-pilotos></app-lista-pilotos>
-  <app-alta-piloto (addedPiloto)="nuevoItem()"></app-alta-piloto>
+  <div *ngIf="usuarioLogado">
+    <app-lista-pilotos></app-lista-pilotos>
+    <app-alta-piloto (addedPiloto)="nuevoItem()"></app-alta-piloto>
+    <app-lista-bolidos></app-lista-bolidos>
+  </div>
+  <div *ngIf="!usuarioLogado">
+    <app-login (comprobarUsuario)="usuarioLogado=$event"></app-login>
+  </div>
 </div>

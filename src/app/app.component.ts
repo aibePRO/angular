@@ -9,7 +9,7 @@ import { ListaPilotosComponent } from './lista-pilotos/lista-pilotos.component';
 
 export class AppComponent implements OnInit, OnDestroy {
   private _title = 'Bienvenido a esta App';
-  private _subtitle = 'Tercera sesión Angular';
+  private _subtitle = 'Cuarta sesión Angular';
   private _logoFormula = 'https://www.autofacil.es/elementosWeb/gestionCajas/AUF/Image/ferrari_car.png';
   
   @ViewChild(ListaPilotosComponent)
@@ -29,6 +29,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   //métodos
   ngOnInit() {
+    // this._logoFormula.usuarioLogado = JSON.parse(localStorage.getItem('usuario_logado'));
   }
 
   ngOnDestroy() {

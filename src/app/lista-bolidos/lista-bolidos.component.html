@@ -1,0 +1,7 @@
+<h3>Listado de coches</h3>
+<ul>
+  <!-- Ojo con el bolidos y el bolidos$ de la asignación directa -->
+  <li *ngFor="let bolido of bolidos$ | async | slice: 1"> 
+    {{ bolido | uppercase | reversex }}
+  </li>
+</ul>

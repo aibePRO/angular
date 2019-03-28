@@ -1,6 +1,9 @@
 Angular:
 Framework multiplataforma que permite realizar aplicaciones/sitios web utilizando javascript.
 
+Ionic -> mobile
+Electron -> Desktop
+
 Typescript:
 Superset tipado de Javascript que compila directamente a este.
 
@@ -14,3 +17,4 @@ interface {
     mienbro:tipo,
     miembro?:tipo <-- no obligatorio.
 }
+

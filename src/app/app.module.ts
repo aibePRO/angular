@@ -7,13 +7,19 @@ import { AppComponent } from './app.component';
 import { PilotoComponent } from './piloto/piloto.component';
 import { ListaPilotosComponent } from './lista-pilotos/lista-pilotos.component';
 import { AltaPilotoComponent } from './alta-piloto/alta-piloto.component';
+import { ListaBolidosComponent } from './lista-bolidos/lista-bolidos.component';
+import { LoginComponent } from './login/login.component';
+import { ReversexPipe } from './pipes/reversex.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     PilotoComponent,
     ListaPilotosComponent,
-    AltaPilotoComponent
+    AltaPilotoComponent,
+    ListaBolidosComponent,
+    LoginComponent,
+    ReversexPipe
   ],
   imports: [
     BrowserModule,

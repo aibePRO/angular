@@ -14,20 +14,26 @@ export class ListaPilotosComponent implements OnInit {
 
   constructor(private pilotosSrv:PilotosService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     //síncrona
     // this.pilotos = this.pilotosSrv.obtenerPilotos();
     //asíncrona
     // this.pilotosSrv.obtenerPilotosAsync((data:any) => {
     //   this.pilotos = data;
     // });
-    this.pilotosSrv.obtenerPilotos()
+    /* this.pilotosSrv.obtenerPilotos()
       .then(data => {
         this.pilotos = data;
       })
       .catch(error => {
         console.log(`Ha habido un error ${error}`);
-      });
+      }); */
+
+      try {
+        this.pilotos = await this.pilotosSrv.obtenerPilotos();
+      } catch(error) {
+        console.log(`Ha habido un error ${error}`);
+      }
   }
 
   verPilotos() {
