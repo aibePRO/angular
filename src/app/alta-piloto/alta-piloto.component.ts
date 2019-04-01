@@ -31,7 +31,7 @@ export class AltaPilotoComponent implements OnInit {
       ));
       this.addedPiloto.emit();
     } catch(error) {
-      console.log('Ha habido un error de carga...');
+      console.log('Ha habido un error al crear el Piloto...');
     }
     return false;
   }

@@ -10,11 +10,11 @@ export class Piloto {
     get nombre():string {
         return this._nombre;
     }
-    
+
     get apellido():string {
         return this._apellido;
     }
-    
+
     get escuderia():string {
         return this._escuderia;
     }
@@ -49,7 +49,6 @@ export class Piloto {
         this._apellido = apellido;
         this._escuderia = escuderia;
         this._avatar = avatar;
-
     }
-    
+
 }

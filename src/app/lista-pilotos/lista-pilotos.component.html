@@ -9,7 +9,12 @@
       </tr>
     </thead>
     <tbody *ngIf="mostrarPilotos">
-      <tr app-piloto *ngFor="let piloto of pilotos; let i = index" [data]="piloto" [indice]="i + 1" (itemBorrado)="borrarItem($event)"></tr>
+      <tr app-piloto
+        *ngFor="let piloto of pilotos; let i = index"
+        [data]="piloto"
+        [indice]="i + 1"
+        (itemBorrado)="borrarItem($event)"
+      ></tr>
     </tbody>
   </table>
   <ng-template #esperando>

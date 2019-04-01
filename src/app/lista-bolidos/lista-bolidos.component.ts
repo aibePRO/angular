@@ -6,10 +6,10 @@ import { Subscription, Observable } from 'rxjs';
   selector: 'app-lista-bolidos',
   templateUrl: './lista-bolidos.component.html',
   styleUrls: ['./lista-bolidos.component.css'],
-  providers:[BolidosService]
+  providers: [BolidosService]
 })
 export class ListaBolidosComponent implements OnInit {
-  
+
   bolidos: string[];
   bolidos$:Observable<string[]>;
   subscripcion:Subscription;

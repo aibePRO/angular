@@ -11,6 +11,9 @@
     <app-lista-bolidos></app-lista-bolidos>
   </div>
   <div *ngIf="!usuarioLogado">
-    <app-login (comprobarUsuario)="usuarioLogado=$event"></app-login>
+    <!--Asíncrona-->
+    <!--<app-login (comprobarUsuario)="usuarioLogado=$event"></app-login>-->
+    <!--localStorage-->
+    <app-login (comprobarUsuario)="comprobarUsuario()"></app-login>
   </div>
 </div>

@@ -11,26 +11,27 @@ export class AppComponent implements OnInit, OnDestroy {
   private _title = 'Bienvenido a esta App';
   private _subtitle = 'Cuarta sesión Angular';
   private _logoFormula = 'https://www.autofacil.es/elementosWeb/gestionCajas/AUF/Image/ferrari_car.png';
-  
-  @ViewChild(ListaPilotosComponent)
-  lista;
+  usuarioLogado: boolean = false;
+  errorMsg: string = '';
 
-  get title():string {
+
+  @ViewChild(ListaPilotosComponent)
+  lista:any;
+
+  get title(): string {
     return this._title;
   }
 
-  get subtitle():string {
+  get subtitle(): string {
     return this._subtitle;
   }
 
-  get logoFormula():string {
+  get logoFormula(): string {
     return this._logoFormula;
   }
 
   //métodos
-  ngOnInit() {
-    // this._logoFormula.usuarioLogado = JSON.parse(localStorage.getItem('usuario_logado'));
-  }
+  ngOnInit() { }
 
   ngOnDestroy() {
     console.log('Este componente se ha destruído...');
@@ -39,5 +40,13 @@ export class AppComponent implements OnInit, OnDestroy {
   nuevoItem() {
     this.lista.ngOnInit();
   }
+
+  //Usando el LocalStorage
+  comprobarUsuario() {
+    this.usuarioLogado = JSON.parse(localStorage.getItem('usuario_logado'));
+    console.log(this.usuarioLogado);
+    this.errorMsg = this.usuarioLogado ? '' : 'Error Username/Password';
+  }
+
 
 }

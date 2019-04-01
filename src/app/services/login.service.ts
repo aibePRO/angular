@@ -7,15 +7,15 @@ import { Usuario } from '../model/usuario';
 export class LoginService {
 
   // usuario:Usuario[];
-  usuario:Usuario;
+  usuario: Usuario;
 
-  constructor() { 
+  constructor() {
     this.usuario = new Usuario('Aitor', 'Bertorelli', 'admin', 'admin');
   }
 
-  autenticacionUsuario(user:Usuario):Promise<boolean> {
+  autenticacionUsuario(user:Usuario): Promise<boolean> {
     let promise = new Promise<boolean>((resolve, reject) => {
-      try {        
+      try {
         resolve(this.compruebaUsuario(user));
       } catch (error) {
         reject(error);
@@ -24,25 +24,30 @@ export class LoginService {
     return promise;
   }
 
-  login = (l:any) => {
+  compruebaUsuario(user: Usuario): boolean {
+    if (user.username == '' &&  user.password == '') return true;
+    return (this.usuario.username === user.username
+      && this.usuario.password === user.password);
+  }
+
+  // Usando localStorage se cambia el método autenticacionUsuario por login
+  loginStorage(user: Usuario): any {
+    // Esto
+    // if (l.password === this.usuario.password) {
+    //   localStorage.setItem('usuario_logado', JSON.stringify(true));
+    // } else {
+    //   localStorage.setItem('usuario_logado', JSON.stringify(false));
+    // }
+    // Pero mejor simplificado
+    localStorage.setItem('usuario_logado', JSON.stringify(this.compruebaUsuario(user)));
+  }
+
+  login = (user: Usuario) => {
     return new Promise<boolean>((resolve, reject) => {
-      resolve(this.compruebaUsuario(l));
+      resolve(this.loginStorage(user));
     });
   }
 
-  compruebaUsuario(user:Usuario):boolean {
-    return (this.usuario.username === user.username 
-      && this.usuario.password === user.password) ? true : false;
-  }
-
-  loginStorage(l:any) {
-    if (l.password === this.usuario.password) {
-      localStorage.setItem('usuario_loagado', JSON.stringify(true));
-    } else {
-      localStorage.setItem('usuario_loagado', JSON.stringify(false));
-    }
-  }
-
-  // localStorage.setItem('usuario_logado', JSON.stringify(l === this.usuario.password));
+  //
 
 }
