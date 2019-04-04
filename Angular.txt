@@ -1,4 +1,4 @@
-Angular:
+﻿Angular:
 Framework multiplataforma que permite realizar aplicaciones/sitios web utilizando javascript.
 
 Ionic -> mobile
@@ -18,8 +18,35 @@ interface {
     miembro?:tipo <-- no obligatorio.
 }
 
-Extension Chrome
+Extension Chrome --------------------------
 https://augury.rangle.io/
 
 Framework CSS
 Materialize
+
+
+Jasmine Karma ---------------------------
+
+describe (Componente)
+it (condición)
+epect(tipo).toBe(condición)
+
+TDD (test-driven development) is "red, green, refactor"
+Red, hacer un test que falle
+Green, hacer que el código funciones
+Refactor, eliminar redundancias.
+
+ng test
+
+e2e pruebas funcionales (protractor)----------------------------------
+
+ng e2e
+
+
+Game Kahoot! ----------------------------------------------
+PIN 606868
+
+
+Mockups -------------------------------------------------------
+Jasmine 
+Spy
