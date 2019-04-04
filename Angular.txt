@@ -9,7 +9,7 @@ Superset tipado de Javascript que compila directamente a este.
 
 Typescript-----------------------------------------------------------------
 
-let y const tienen ámbitos por bloque (cada {} es un bloque: if, loops...)
+let y const tienen ï¿½mbitos por bloque (cada {} es un bloque: if, loops...)
 
 Interfaces
 
@@ -18,3 +18,8 @@ interface {
     miembro?:tipo <-- no obligatorio.
 }
 
+Extension Chrome
+https://augury.rangle.io/
+
+Framework CSS
+Materialize
